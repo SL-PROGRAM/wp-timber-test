@@ -1,0 +1,16 @@
+{% if menu %}
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<h1 class="hdr-logo" role="banner">
+				<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+			</h1>
+			<ul class="navbar-nav mr-auto">
+				{% for item in menu %}
+					<li class="{{ item.classes | join(' ') }} nav-item active">
+						<a class="nav-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+						{% include "menu.twig" with {'menu': item.children} %}
+					</li>
+				{% endfor %}
+			</ul>
+
+		</div>
+{% endif %}

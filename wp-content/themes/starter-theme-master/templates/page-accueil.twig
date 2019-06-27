@@ -1,0 +1,54 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="content-wrapper container">
+        <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+            <section class="article-content">
+                <h1 class="article-h1">{{post.title}}</h1>
+                <div class="article-body">
+                </div>
+
+{#                <a href="{{ function('get_permalink', 94) }}">aaa</a>#}
+
+                {% for post in posts %}
+                    {{ post.link }}
+                {% endfor %}
+                <div class="card-deck">
+                    <div class="card text-center">
+                        <div class="focus-box focus-creation">
+                            <a href="" class="item-creation"></a>
+                        </div>
+                        <h5 class="card-header">Card title</h5>
+                        <div class="card-body">
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="focus-box focus-referencement">
+                            <a href="" class="item-referencement"></a>
+                        </div>
+                        <h5 class="card-header">Card title</h5>
+                        <div class="card-body">
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card text-center">
+                        <div class="focus-box focus-entreprise">
+                            <a href="" class="item-entreprise"></a>
+                        </div>
+                        <h5 class="card-header">Card title</h5>
+                        <div class="card-body">
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </section>
+        </article>
+    </div><!-- /content-wrapper -->
+{% endblock %}
